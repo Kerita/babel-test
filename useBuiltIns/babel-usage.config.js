@@ -9,7 +9,7 @@ module.exports = (api) => {
         {
           targets: "IE >= 8",
           useBuiltIns: "usage",
-          corejs: "3.15",
+          corejs: 3.0,
         },
       ],
     ],

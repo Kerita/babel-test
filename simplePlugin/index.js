@@ -3,13 +3,13 @@ module.exports = (babel, opts) => {
 
   return {
     visitor: {
-      Identifier(path, state) {
-        const { node } = path;
-        const value = convertIdentifiderMap[node.name];
-        if (value) {
-          node.name = value;
-        }
-      },
+      // Identifier(path, state) {
+      //   const { node } = path;
+      //   const value = convertIdentifiderMap[node.name];
+      //   if (value) {
+      //     node.name = value;
+      //   }
+      // },
 
       ArrowFunctionExpression(path) {
         const node = path.node;
@@ -18,9 +18,9 @@ module.exports = (babel, opts) => {
         }
       },
 
-      // ArrowFunctionExpression(path) {
-      //   path.arrowFunctionToExpression({});
-      // },
+      ArrowFunctionExpression(path) {
+        path.arrowFunctionToExpression({});
+      },
     },
   };
 };
