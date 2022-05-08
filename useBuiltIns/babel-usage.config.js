@@ -7,9 +7,16 @@ module.exports = (api) => {
       [
         "@babel/preset-env",
         {
-          targets: "IE >= 8",
+          targets: {
+            chrome: 43,
+          },
           useBuiltIns: "usage",
-          corejs: 3.0,
+          // corejs: {
+          //   version: "3.15",
+          //   proposals: true,
+          // },
+          corejs: "3.15",
+          shippedProposals: true,
         },
       ],
     ],

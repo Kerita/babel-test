@@ -7,7 +7,8 @@ export default function ({ types }) {
   function applyInstance(method, args, context) {
     for (const plugin of plugins) {
       if (plugin) {
-        plugin[method].apply(plugin, [...args, context]);
+        // plugin[method].apply(plugin, [...args, context]);
+        plugin[method](...args, context);
       }
     }
   }
